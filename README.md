@@ -1,2 +1,2 @@
 # EnergyMonitoringApp
-Tugas besar Pemrograman Berorentiasi Objek
+Tugas Besar Pemrograman Berorentiasi Objek
