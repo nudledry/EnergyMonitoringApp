@@ -16,5 +16,4 @@ public class UserDto {
     private List<EnergyUsage> energyUsages;
     private List<TargetUsage> targetUsages;
     private Date createdAt;
-    test
 }
