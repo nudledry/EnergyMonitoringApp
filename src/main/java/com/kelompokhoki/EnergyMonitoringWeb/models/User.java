@@ -1,19 +1,18 @@
 package com.kelompokhoki.EnergyMonitoringWeb.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class User {
@@ -26,11 +25,13 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<EnergyUsage> energyUsages;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<TargetUsage> targetUsages;
 
     @Column(columnDefinition = "TEXT")
-    private Date createdAt;
+    private LocalDateTime createdOn;
 }
